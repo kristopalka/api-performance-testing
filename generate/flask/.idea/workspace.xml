@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83ce099e-af97-40e7-a8d6-832210d3ac7b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/flask.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.openapi-generator-ignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.openapi-generator/FILES" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.openapi-generator/VERSION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/git_push.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/controllers/default_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/controllers/security_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/encoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/models/base_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/openapi/openapi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/test/test_default_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/typing_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi_server/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gin/.idea/gin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gin/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../openapi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../openapitools.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.openapi-generator-ignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.openapi-generator/FILES" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/.openapi-generator/VERSION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/OpenApiGeneratorApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/RFC3339DateFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/api/ApiUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/api/HelloApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/api/HelloApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/configuration/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/configuration/SpringDocConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/main/resources/openapi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring/src/test/java/org/openapitools/OpenApiGeneratorApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2fUsWxpNN3MkRvTl4MNQgiV36JL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml.flask-gunicorn: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.flask-uwsgi: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.flask: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Python.__main__.executor": "Run",
+    "Python.gunicorn.executor": "Run",
+    "Python.my_app.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Projekty/api-performance-testing/generate/flask",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projekty\api-performance-testing\generate\flask" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\api-performance-testing\generate\flask\openapi_server" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml.flask-gunicorn: Compose Deployment">
+    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/openapi_server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/openapi_server/__main__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\Projekty\api-performance-testing\generate\flask\my_app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.flask-gunicorn: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="flask-gunicorn" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.flask-uwsgi: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="flask-uwsgi" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml.flask-uwsgi: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.flask-gunicorn: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Python.__main__" />
+      <item itemvalue="Python.my_app" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.flask-gunicorn: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Python.__main__" />
+        <item itemvalue="Python.my_app" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83ce099e-af97-40e7-a8d6-832210d3ac7b" name="Changes" comment="" />
+      <created>1713867025784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713867025784</updated>
+      <workItem from="1713867027352" duration="3452000" />
+      <workItem from="1713876302279" duration="373000" />
+      <workItem from="1713878125677" duration="1085000" />
+      <workItem from="1713879235056" duration="15151000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/flask$gunicorn.coverage" NAME="my_app Coverage Results" MODIFIED="1713957608285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1713957656733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openapi_server" />
+  </component>
+</project>

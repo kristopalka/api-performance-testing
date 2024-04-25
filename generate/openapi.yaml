@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Api performance testing
+  description: |-
+    Simple API for performance testing
+  version: 1.0.0
+
+
+paths:
+  /hello:
+    get:
+      summary: Returns simple text
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        data:
+          type: string

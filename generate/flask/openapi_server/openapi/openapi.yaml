@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  description: Simple API for performance testing
+  title: Api performance testing
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /hello:
+    get:
+      operationId: hello_get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: successful operation
+      summary: Returns simple text
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+components:
+  schemas:
+    Response:
+      example:
+        data: data
+      properties:
+        data:
+          title: data
+          type: string
+      title: Response
+      type: object
