@@ -4,63 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9803621c-6561-4b53-985b-ac63148d0f2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../flask/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.idea/flask.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.openapi-generator-ignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.openapi-generator/FILES" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.openapi-generator/VERSION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/git_push.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/controllers/default_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/controllers/security_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/encoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/models/base_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/openapi/openapi.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/test/test_default_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/typing_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/openapi_server/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/test-requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flask/tox.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../openapi.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../openapitools.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.openapi-generator-ignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.openapi-generator/FILES" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/.openapi-generator/VERSION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/OpenApiGeneratorApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/RFC3339DateFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/api/ApiUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/api/HelloApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/api/HelloApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/configuration/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/org/openapitools/configuration/SpringDocConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/resources/openapi.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/test/java/org/openapitools/OpenApiGeneratorApplicationTests.java" afterDir="false" />
+    <list default="true" id="1a7ac700-5c22-4323-9f80-1ab608219088" name="Changes" comment="launch go lang api">
+      <change beforePath="$PROJECT_DIR$/../flask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/api_default.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/api_default.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/model_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/model_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,31 +25,87 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kristopalka"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/kristopalka/api-performance-testing",
+    "accountId": "aec8537c-4218-4956-a5c0-4cb2566d04f6"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 7
 }]]></component>
-  <component name="ProjectId" id="2faGE98JXA9cwdjCEAfdyQBC66l" />
+  <component name="ProjectId" id="2faQ3tEf81uTfpZWSCGNygY1AFw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.docker-compose.yml.gin: Compose Deployment.executor": "Run",
+    "Go Build.go build github.com/GIT_USER_ID/GIT_REPO_ID.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/krist",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "go.vgo"
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\api-performance-testing\generate\gin\go" />
+      <recent name="D:\Projekty\api-performance-testing\generate\gin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml.gin: Compose Deployment">
+    <configuration name="go build github.com/GIT_USER_ID/GIT_REPO_ID" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gin" />
+      <working_directory value="$PROJECT_DIR$/go" />
+      <kind value="PACKAGE" />
+      <package value="github.com/GIT_USER_ID/GIT_REPO_ID" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/go/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.gin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="gin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.gin: Compose Deployment" />
+        <item itemvalue="Go Build.go build github.com/GIT_USER_ID/GIT_REPO_ID" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -105,6 +115,13 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="launch go lang api" />
+    <option name="LAST_COMMIT_MESSAGE" value="launch go lang api" />
+  </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
   </component>

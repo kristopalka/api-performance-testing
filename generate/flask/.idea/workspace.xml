@@ -102,34 +102,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.Dockerfile.executor": "Run",
-    "Docker.docker-compose.yml.flask-gunicorn: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.flask-uwsgi: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.flask: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Python.__main__.executor": "Run",
-    "Python.gunicorn.executor": "Run",
-    "Python.my_app.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projekty/api-performance-testing/generate/flask",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.flask-gunicorn: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.flask-uwsgi: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.flask: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gunicorn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.my_app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projekty/api-performance-testing/generate/flask&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projekty\api-performance-testing\generate\flask" />
@@ -238,11 +238,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml.flask-uwsgi: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.flask-gunicorn: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Python.__main__" />
       <item itemvalue="Python.my_app" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.flask-gunicorn: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.flask-uwsgi: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
@@ -273,6 +273,7 @@
       <workItem from="1713876302279" duration="373000" />
       <workItem from="1713878125677" duration="1085000" />
       <workItem from="1713879235056" duration="15151000" />
+      <workItem from="1714037037931" duration="6000" />
     </task>
     <servers />
   </component>
