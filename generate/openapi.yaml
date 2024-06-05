@@ -3,25 +3,61 @@ info:
   title: Api performance testing
   description: |-
     Simple API for performance testing
-  version: 1.0.0
+  version: 1.1.0
 
 
 paths:
   /hello:
     get:
-      summary: Returns simple text
+      summary: Returns simple JSON object with "Hello World!" text
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: '#/components/schemas/Message'
+
+  /fibonacci/{n}:
+    get:
+      summary: Returns n-th element of Fibonacci Sequence in a JSON object
+      parameters:
+        - name: n
+          in: path
+          description: number of Fibonacci element to return
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fibonacci'
+  
+  /database:
+    get:
+      summary: Returns random element from database
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
 
 components:
   schemas:
-    Response:
+    Message:
       type: object
       properties:
-        data:
+        message:
           type: string
+    Fibonacci:
+      type: object
+      properties:
+        number:
+          type: integer
+        value:
+          type: integer
