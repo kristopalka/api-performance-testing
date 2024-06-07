@@ -20,7 +20,7 @@ ENV PATH=/venv/bin:$PATH
 # install test dependencies
 RUN pip install pytest
 
-# run tests
+# run tests[
 RUN pytest tests
 
 

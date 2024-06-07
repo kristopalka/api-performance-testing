@@ -3,8 +3,8 @@
 from fastapi.testclient import TestClient
 
 
-from openapi_server.models.fibonacci import Fibonacci  # noqa: F401
-from openapi_server.models.message import Message  # noqa: F401
+from src.openapi_server.models.fibonacci import Fibonacci  # noqa: F401
+from src.openapi_server.models.message import Message  # noqa: F401
 
 
 def test_database_get(client: TestClient):

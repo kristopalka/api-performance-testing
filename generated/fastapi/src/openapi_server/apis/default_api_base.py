@@ -2,8 +2,8 @@
 
 from typing import ClassVar, Dict, List, Tuple  # noqa: F401
 
-from openapi_server.models.fibonacci import Fibonacci
-from openapi_server.models.message import Message
+from src.openapi_server.models.fibonacci import Fibonacci
+from src.openapi_server.models.message import Message
 
 
 class BaseDefaultApi:

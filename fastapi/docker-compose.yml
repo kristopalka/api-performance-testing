@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  fastapi:
+    image: "fastapi"
+    container_name: "fastapi"
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:8080"

@@ -4,10 +4,10 @@ from typing import Dict, List  # noqa: F401
 import importlib
 import pkgutil
 
-from openapi_server.apis.default_api_base import BaseDefaultApi
-import openapi_server.impl
+from src.openapi_server.apis.default_api_base import BaseDefaultApi
+import src.openapi_server.impl
 
-from fastapi import (  # noqa: F401
+from fastapi import (
     APIRouter,
     Body,
     Cookie,
@@ -21,14 +21,14 @@ from fastapi import (  # noqa: F401
     status,
 )
 
-from openapi_server.models.extra_models import TokenModel  # noqa: F401
-from openapi_server.models.fibonacci import Fibonacci
-from openapi_server.models.message import Message
+from src.openapi_server.models.extra_models import TokenModel  # noqa: F401
+from src.openapi_server.models.fibonacci import Fibonacci
+from src.openapi_server.models.message import Message
 
 
 router = APIRouter()
 
-ns_pkg = openapi_server.impl
+ns_pkg = src.openapi_server.impl
 for _, name, _ in pkgutil.iter_modules(ns_pkg.__path__, ns_pkg.__name__ + "."):
     importlib.import_module(name)
 
@@ -59,7 +59,7 @@ async def database_get(
 async def fibonacci_n_get(
     n: int = Path(..., description="number of Fibonacci element to return"),
 ) -> Fibonacci:
-    ...
+    return Fibonacci(n, fibonacci_n_get(n))
 
 
 @router.get(
