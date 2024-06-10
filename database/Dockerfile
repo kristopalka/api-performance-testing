@@ -1,5 +1,6 @@
-FROM mysql:8.4.0
+FROM mariadb:11.5.1-rc
 
-COPY init.sql /docker-entrypoint-initdb.d/
+RUN chown -R mysql:root /var/lib/mysql/
+COPY init.sql /docker-entrypoint-initdb.d/init.sql
 
 EXPOSE 3306
