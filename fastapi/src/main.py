@@ -1,3 +1,4 @@
+import logging
 import random
 
 from fastapi import FastAPI, HTTPException, Depends
@@ -7,7 +8,7 @@ from .database import get_message_by_id, get_db
 from .fibonacci import generate_fibonacci
 
 app = FastAPI(
-    docs_url=None,
+    docs_url=None,  # turn off documentation
     redoc_url=None
 )
 

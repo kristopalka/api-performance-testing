@@ -21,3 +21,11 @@ services:
     restart: unless-stopped
     ports:
       - "8080:8080"
+
+  spring:
+    image: "spring"
+    container_name: "spring"
+    build: spring/
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
