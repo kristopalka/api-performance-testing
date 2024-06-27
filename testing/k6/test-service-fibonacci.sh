@@ -53,6 +53,6 @@ for N in 100 1000 10000
 do
   ./endpoint.sh -u "${SERVICE_URL}" \
     --endpoint "${ENDPOINT}/${N}" \
-    --output "./results/${TESTED_SERVICE}" \
+    --output "${RESULTS_DIR}/${TESTED_SERVICE}" \
     --skip-warmup
 done

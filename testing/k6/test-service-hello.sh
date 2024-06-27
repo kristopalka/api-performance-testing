@@ -45,4 +45,4 @@ echo " Service started."
 
 ./endpoint.sh -u ${SERVICE_URL} \
   --endpoint "${ENDPOINT}" \
-  --output "./results/${TESTED_SERVICE}"
+  --output "${RESULTS_DIR}/${TESTED_SERVICE}"
