@@ -27,3 +27,11 @@ services:
     restart: unless-stopped
     ports:
       - "8080:8080"
+      
+  gin:
+    image: "gin"
+    container_name: "gin"
+    build: gin/
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
