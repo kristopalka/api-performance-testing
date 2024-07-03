@@ -1,8 +1,10 @@
 #!/bin/bash
 
 source .env
+DEFAULT_TESTED_SERVICE="spring"
 ENDPOINT="hello"
-DEFAULT_TESTED_SERVICE="fastapi"
+VUS=1024
+TIME=15
 
 
 helpFunction()
@@ -32,7 +34,7 @@ sshpass -p "${SERVER_PASS}" ssh -l "${SERVER_USER}" "${SERVER_IP}" \
   cd api-performance-testing/services/
   echo ' Stopping all containers...'
   docker stop \$(docker ps -a -q) >> /dev/null
-  docker compose up -d ${TESTED_SERVICE}
+  docker compose up -d mariadb ${TESTED_SERVICE}
   "
 
 echo -n "Waiting for service to run"
@@ -45,4 +47,34 @@ echo " Service started."
 
 ./endpoint.sh -u ${SERVICE_URL} \
   --endpoint "${ENDPOINT}" \
-  --output "${RESULTS_DIR}/${TESTED_SERVICE}"
+  --output "${RESULTS_DIR}/${TESTED_SERVICE}" \
+  --vus 512 \
+  --time ${TIME}
+
+
+sleep 20
+
+./endpoint.sh -u ${SERVICE_URL} \
+  --endpoint "${ENDPOINT}" \
+  --output "${RESULTS_DIR}/${TESTED_SERVICE}" \
+  --vus 2048 \
+  --time ${TIME} \
+  --skip-warmup
+
+sleep 20
+
+./endpoint.sh -u ${SERVICE_URL} \
+  --endpoint "${ENDPOINT}" \
+  --output "${RESULTS_DIR}/${TESTED_SERVICE}" \
+  --vus 256 \
+  --time ${TIME} \
+  --skip-warmup
+
+sleep 20
+
+./endpoint.sh -u ${SERVICE_URL} \
+  --endpoint "${ENDPOINT}" \
+  --output "${RESULTS_DIR}/${TESTED_SERVICE}" \
+  --vus 128 \
+  --time ${TIME} \
+  --skip-warmup
