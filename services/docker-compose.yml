@@ -35,3 +35,11 @@ services:
     restart: unless-stopped
     ports:
       - "8080:8080"
+      
+  flask:
+    image: "flask"
+    container_name: "flask"
+    build: flask/
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
