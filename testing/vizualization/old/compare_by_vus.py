@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from vizualization.utils import load_data
+from vizualization.utils.utils import load_data
 
 service = 'spring'
 params = ['avg', 'min', 'p(10)', 'p(20)', 'p(30)', 'p(40)', 'med', 'p(60)', 'p(70)', 'p(80)', 'p(90)', 'p(95)', 'p(98)']

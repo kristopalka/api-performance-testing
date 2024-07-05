@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from vizualization.compare_by_vus import load_data
+from vizualization.utils.utils import load_data
 
 params = ['avg', 'min', 'p(10)', 'p(20)', 'p(30)', 'p(40)', 'med', 'p(60)', 'p(70)', 'p(80)', 'p(90)', 'p(95)', 'p(98)','p(99)', 'p(99.9)', 'max']
 endpoint = "hello"

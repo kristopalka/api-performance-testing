@@ -1,7 +1,7 @@
 import unittest
 import requests
 
-URL = "http://localhost:8080"
+URL = "http://10.0.0.1:8080"
 
 
 class ApiPerformanceTesting(unittest.TestCase):
