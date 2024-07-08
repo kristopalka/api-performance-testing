@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt
 
-from vizualization.utils.utils import colors, colors_light, round_significant_digits, load_data
+from vizualization.utils.utils import colors, colors_light, round_significant_digits
+from vizualization.utils.load import load_results
 
-path_base = "./../results"
+path_base = "./../../results"
+method = "const_vus"
 
 service_values = ['spring', 'fastapi', 'flask', 'gin']
 endpoint = "hello"
@@ -11,12 +13,12 @@ vus_values = ['128', '256', '512', '1024', '2048', '4096', '8192', '16384', '327
 metric = "http_req_failed"
 
 paths = {
-    f'{service}_{vus}vus': f'{path_base}/{service}/{endpoint}/results_{duration}s_{vus}vus.json'
+    f'{service}_{vus}vus': f'{path_base}/{method}/{service}/{endpoint}/results_{duration}s_{vus}vus.json'
     for vus in vus_values
     for service in service_values
 }
 
-data = {tech: load_data(path) for tech, path in paths.items()}
+data = {tech: load_results(path) for tech, path in paths.items()}
 failed_requests = {tech: data[tech]['metrics'][metric]['passes'] for tech in paths.keys()}
 success_requests = {tech: data[tech]['metrics'][metric]['fails'] for tech in paths.keys()}
 

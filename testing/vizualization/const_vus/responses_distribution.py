@@ -10,7 +10,7 @@ vus = 128
 file = f"warmup_raw_{duration}s_{vus}vus"
 metrics = "http_req_duration"
 
-file_path = f"./../results/{framework}/{endpoint}/{file}.json"
+file_path = f"./../results/const_vus/{framework}/{endpoint}/{file}.json"
 
 with open(file_path, 'r') as f:
     raw_data = f.readlines()

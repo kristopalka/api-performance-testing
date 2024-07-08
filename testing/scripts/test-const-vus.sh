@@ -17,7 +17,7 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-RESULTS_DIR=${RESULTS_DIR:-"./../results"}
+RESULTS_DIR=${RESULTS_DIR:-"./../results/const_vus"}
 SERVICE=${SERVICE:-"flask"}
 ENDPOINT=${ENDPOINT:-"hello"}
 WARMUP_VUS=${WARMUP_VUS:-128}
@@ -59,7 +59,7 @@ then
     --vus "${WARMUP_VUS}" --duration "${WARMUP_DURATION}s" \
     --env URL="${URL}" \
     --no-summary \
-    k6/script.js
+    k6/const_vus.js
 fi
 
 
@@ -71,5 +71,5 @@ k6 run \
   --summary-trend-stats="count,avg,min,p(10),p(20),p(30),p(40),med,p(60),p(70),p(80),p(90),p(95),p(98),p(99),p(99.9),max" \
   --summary-export "${OUTPUT_DIR}/results_${DURATION}s_${VUS}vus.json" \
   --out json="${OUTPUT_DIR}/raw_${DURATION}s_${VUS}vus.json" \
-  k6/script.js
+  k6/const_vus.js
 
