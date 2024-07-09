@@ -111,6 +111,4 @@ func getDatabase(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, message)
-	fmt.Println(message)
-
 }
