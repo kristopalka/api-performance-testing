@@ -20,22 +20,21 @@ done
 
 
 RESULTS_DIR=${RESULTS_DIR:-"./../results/ramping_rps"}
-SERVICE=${SERVICE:-"fastapi"}
+SERVICE=${SERVICE:-"gin"}
 ENDPOINT=${ENDPOINT:-"hello"}
 
 WARMUP_RPS=${WARMUP_RPS:-128}
 WARMUP_DURATION=${WARMUP_DURATION:-5}
 WARMUP_ALLOCATED_VUS=100
 
-START_RPS=${START_RPS:-8}
-END_RPS=${START_RPS:-4096}
-DURATION=${DURATION:-20}
+START_RPS=${START_RPS:-0}
+END_RPS=${END_RPS:-16384}
+DURATION=${DURATION:-150}
 ALLOCATED_VUS=20000
 
 
 SKIP_WARMUP=${SKIP_WARMUP:-false}
 SKIP_RESTART=${SKIP_RESTART:-false}
-
 
 URL="${API_URL}/${ENDPOINT}"
 OUTPUT_DIR="${RESULTS_DIR}/${SERVICE}/${ENDPOINT//\//_}"
@@ -79,8 +78,8 @@ fi
 # ------------------------------- TEST STAGE -------------------------------
 STATS_FULL="count,avg,min,p(10),p(20),p(30),p(40),med,p(60),p(70),p(80),p(90),p(95),p(98),p(99),p(99.9),max"
 STATS_NORMAL="count,avg,min,max"
-RESULTS_FILE="${OUTPUT_DIR}/results_${DURATION}s_${START_RPS}to${END_RPS}rps.json"
-RAW_FILE="${OUTPUT_DIR}/raw_${DURATION}s_${START_RPS}to${END_RPS}rps.json"
+RESULTS_FILE="${OUTPUT_DIR}/results_${DURATION}s_${START_RPS}_${END_RPS}rps.json"
+RAW_FILE="${OUTPUT_DIR}/raw_${DURATION}s_${START_RPS}_${END_RPS}rps.json"
 
 echo "Testing service..."
 k6 run \
@@ -92,5 +91,5 @@ k6 run \
   --summary-trend-stats="${STATS_NORMAL}" \
   --summary-export "${RESULTS_FILE}" \
   --out json="${RAW_FILE}" \
-  k6/const_rps.js
+  k6/ramping_rps.js
 

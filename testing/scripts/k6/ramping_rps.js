@@ -2,7 +2,7 @@ import http from 'k6/http';
 
 export const options = {
     scenarios: {
-        test: {
+        ramping: {
             executor: 'ramping-arrival-rate',
             startRate: __ENV.START_RPS,
             timeUnit: '1s',

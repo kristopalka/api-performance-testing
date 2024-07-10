@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
+from vizualization.utils.const import services_colors_light
 from vizualization.utils.load import load_results
-from vizualization.utils.utils import colors_light
 
 path_base = "./../../results"
 method = "const_rps"
@@ -38,10 +38,10 @@ for i in range(number_of_bars):
     pos_x = [category + (i - 1.5) * bar_width for category in range(number_of_categories)]
     counts = [metric_data[f'{service}_{rps}rps'] for rps in rps_values]
 
-    ax.bar(pos_x, counts, bar_width, label=f'{service}', color=colors_light[service])
+    ax.bar(pos_x, counts, bar_width, label=f'{service}', color=services_colors_light[service])
 
-    for j in range(number_of_categories):
-        ax.text(pos_x[j] + bar_width / 1000, 0, f'{counts[j]}', ha='center', va='bottom', rotation=90, fontsize=7)
+    #for j in range(number_of_categories):
+    #    ax.text(pos_x[j] + bar_width / 1000, 0, f'{counts[j]}', ha='center', va='bottom', rotation=90, fontsize=7)
 
 ax.set_xlabel('Liczba rps')
 ax.set_ylabel(f'{metric}.{metric_key}')
@@ -51,7 +51,7 @@ ax.set_xticks(range(number_of_categories))
 ax.set_xticklabels(rps_values)
 ax.legend()
 
-# plt.yscale("log")
+plt.yscale("log")
 
 plt.tight_layout()
 plt.show()

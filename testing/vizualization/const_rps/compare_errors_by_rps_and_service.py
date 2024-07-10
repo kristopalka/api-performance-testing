@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
+from vizualization.utils.const import services_colors_light, services_colors
 from vizualization.utils.load import load_results
-from vizualization.utils.utils import colors, colors_light, round_significant_digits
 
 path_base = "./../../results"
 method = "const_rps"
@@ -12,7 +12,6 @@ duration = 10
 # '16', '32', '64', '128', '256', '512', '1024', '2048', '4096', '8192'
 rps_values = ['16', '32', '64', '128', '256', '512', '1024', '2048', '4096', '8192']
 
-
 paths = {
     f'{service}_{rps}rps': f'{path_base}/{method}/{service}/{endpoint}/results_{duration}s_{rps}rps.json'
     for rps in rps_values
@@ -22,7 +21,8 @@ paths = {
 data = {tech: load_results(path) for tech, path in paths.items()}
 failed_requests = {tech: data[tech]['metrics']['http_req_failed']['passes'] for tech in paths.keys()}
 success_requests = {tech: data[tech]['metrics']['http_req_failed']['fails'] for tech in paths.keys()}
-dropped_iterations = {tech: data[tech]['metrics'].get('dropped_iterations', {}).get('count', 0) for tech in paths.keys()}
+dropped_iterations = {tech: data[tech]['metrics'].get('dropped_iterations', {}).get('count', 0) for tech in
+                      paths.keys()}
 
 # Drawing chart
 fig, ax = plt.subplots()
@@ -41,24 +41,20 @@ for i in range(number_of_bars):
     success_counts = [success_requests[f'{service}_{rps}rps'] for rps in rps_values]
     dropped_counts = [dropped_iterations[f'{service}_{rps}rps'] for rps in rps_values]
 
-    sum_success_fails = [x+y for x,y in zip(failed_counts,success_counts)]
+    sum_success_fails = [x + y for x, y in zip(failed_counts, success_counts)]
 
-    ax.bar(pos_x, success_counts, bar_width, label=f'{service} obsłużone', color=colors_light[service])
-    ax.bar(pos_x, failed_counts, bar_width, bottom=success_counts, color=colors[service])
+    ax.bar(pos_x, success_counts, bar_width, label=f'{service} obsłużone', color=services_colors_light[service])
+    ax.bar(pos_x, failed_counts, bar_width, bottom=success_counts, color=services_colors[service])
     ax.bar(pos_x, dropped_counts, bar_width, bottom=sum_success_fails, color='gray')
 
     for j in range(number_of_categories):
         requests_num = failed_counts[j] + success_counts[j]
-        rate = round_significant_digits(100 * failed_counts[j] / requests_num, 3)
+        rate = round(100 * failed_counts[j] / requests_num, 3)
 
-        ax.text(pos_x[j] + bar_width / 15, 10, f'{requests_num}', ha='center', va='bottom', rotation=90, fontsize=7)
         if failed_counts[j] != 0:
-
             ax.text(pos_x[j] + bar_width / 15, 1000, f'{rate}%', ha='center', va='bottom', rotation=90, fontsize=7)
 
-
 ax.bar(0, 0, 0, label='opuszczone iteracje', color='gray')
-
 
 ax.set_xlabel('Liczba rps')
 ax.set_ylabel('Liczba wysłanych żądań')

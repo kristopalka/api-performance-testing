@@ -12,6 +12,7 @@ while [[ "$#" -gt 0 ]]; do
         -v|--vus) VUS="$2"; shift ;;
         -d|--duration) DURATION="$2"; shift ;;
         --skip-warmup) SKIP_WARMUP=true; shift ;;
+        --skip-restart) SKIP_RESTART=true; shift ;;
         *) echo "Unknown parameter passed: $1"; helpFunction ;;
     esac
     shift
@@ -20,21 +21,26 @@ done
 RESULTS_DIR=${RESULTS_DIR:-"./../results/const_vus"}
 SERVICE=${SERVICE:-"flask"}
 ENDPOINT=${ENDPOINT:-"hello"}
+
 WARMUP_VUS=${WARMUP_VUS:-128}
 WARMUP_DURATION=${WARMUP_DURATION:-10}
+
 VUS=${VUS:-4096}
 DURATION=${DURATION:-150}
-SKIP_WARMUP=${SKIP_WARMUP:-false}
 
+
+SKIP_WARMUP=${SKIP_WARMUP:-false}
+SKIP_RESTART=${SKIP_RESTART:-false}
 
 URL="${API_URL}/${ENDPOINT}"
 OUTPUT_DIR="${RESULTS_DIR}/${SERVICE}/${ENDPOINT//\//_}"
 mkdir -p "${OUTPUT_DIR}"
 
 
-if [ ${SKIP_WARMUP} = false ]
+
+# ------------------------------- RESTART CONTAINER -------------------------------
+if [ ${SKIP_RESTART} = false ]
 then
-# ------------------------------- RUN CONTAINER -------------------------------
   echo "Running service \"${SERVICE}\" on server..."
   sshpass -p "${SERVER_PASS}" ssh -l "${SERVER_USER}" "${SERVER_IP}" \
     "
@@ -44,16 +50,17 @@ then
     docker compose up -d mariadb ${SERVICE}
     "
 
-# ------------------------------- TEST ENDPOINT -------------------------------
   echo -n "Waiting for service to run"
   while [ "$(curl -sL -w '%{http_code}' "${URL}" -o /dev/null)" != "200" ]; do
       echo -n "."
       sleep 1
   done
   echo " Service started."
+fi
 
-
-# ------------------------------- WARMUP -------------------------------
+# ------------------------------- LAZY INITIALIZATION WARMUP -------------------------------
+if [ ${SKIP_WARMUP} = false ]
+then
   echo "Warming up service..."
   k6 run \
     --vus "${WARMUP_VUS}" --duration "${WARMUP_DURATION}s" \

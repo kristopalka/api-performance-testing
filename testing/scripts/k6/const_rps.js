@@ -2,7 +2,7 @@ import http from 'k6/http';
 
 export const options = {
     scenarios: {
-        scenario: {
+        constant: {
             executor: 'constant-arrival-rate',
             rate: __ENV.RPS,
             timeUnit: '1s',
