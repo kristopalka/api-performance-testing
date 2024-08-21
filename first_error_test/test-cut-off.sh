@@ -1,5 +1,13 @@
 #!/bin/bash
 
+filter_file() {
+    local file="$1"
+    local tempfile=$(mktemp)
+
+    grep -E '(^{"metric":"failed_counter","type":"Point")|(^{"metric":"dropped_iterations","type":"Point")' "$file" > "$tempfile"
+    mv "$tempfile" "$file"
+}
+
 source .topology_params
 
 while [[ "$#" -gt 0 ]]; do
@@ -11,21 +19,24 @@ while [[ "$#" -gt 0 ]]; do
         --warmup-duration) WARMUP_DURATION="$2"; shift 2 ;;
         -r|--rps) RPS="$2"; shift 2 ;;
         -d|--duration) DURATION="$2"; shift 2 ;;
+        -i) I="$2"; shift 2 ;;
         --skip-warmup) SKIP_WARMUP="true"; shift ;;
         --skip-restart) SKIP_RESTART="true"; shift ;;
         *) echo "Unknown parameter passed: $1"; helpFunction ;;
     esac
 done
 
-RESULTS_DIR=${RESULTS_DIR:-"./../results/const_rps"}
-SERVICE=${SERVICE:-"fastapi"}
+RESULTS_DIR=${RESULTS_DIR:-"./results"}
+SERVICE=${SERVICE:-"spring"}
 ENDPOINT=${ENDPOINT:-"hello"}
 
 WARMUP_RPS=${WARMUP_RPS:-32}
 WARMUP_DURATION=${WARMUP_DURATION:-5}
 WARMUP_ALLOCATED_VUS=50
 
-RPS=${RPS:-850}
+
+I=${I:-0}
+RPS=${RPS:-900}
 DURATION=${DURATION:-120}
 ALLOCATED_VUS=20000
 
@@ -58,26 +69,15 @@ if [ "$SKIP_RESTART" == "false" ]; then
   echo " Service started."
 fi
 
-# ------------------------------- LAZY INITIALIZATION WARMUP -------------------------------
-if [ "$SKIP_WARMUP" = "false" ]; then
-  echo "Warming up service..."
-  k6 run \
-    --env URL="${URL}" \
-    --env RPS="${WARMUP_RPS}" \
-    --env DURATION="${WARMUP_DURATION}" \
-    --env ALLOCATED_VUS="${WARMUP_ALLOCATED_VUS}" \
-    --no-summary \
-    k6/const_rps.js
-fi
-
 
 # ------------------------------- TEST STAGE -------------------------------
-STATS_FULL="count,avg,min,p(10),p(20),p(30),p(40),med,p(60),p(70),p(80),p(90),p(95),p(98),p(99),p(99.9),max"
 STATS_NORMAL="count,avg,min,max"
-RESULTS_FILE="${OUTPUT_DIR}/results_${DURATION}s_${RPS}rps.json"
-RAW_FILE="${OUTPUT_DIR}/raw_${DURATION}s_${RPS}rps.json"
+
 
 echo "Testing service..."
+RESULTS_FILE="${OUTPUT_DIR}/results_${RPS}rps_${I}.json"
+RAW_FILE="${OUTPUT_DIR}/raw_${RPS}rps_${I}.json"
+
 k6 run \
   --env URL="${URL}" \
   --env RPS="${RPS}" \
@@ -86,15 +86,8 @@ k6 run \
   --summary-trend-stats="${STATS_NORMAL}" \
   --summary-export "${RESULTS_FILE}" \
   --out json="${RAW_FILE}" \
-  k6/const_rps.js
-
-filter_file() {
-    local file="$1"
-    local tempfile=$(mktemp)
-
-    grep -E '(^{"metric":"http_req_stats","type":"Point")|(^{"metric":"dropped_iterations","type":"Point")' "$file" > "$tempfile"
-    mv "$tempfile" "$file"
-}
+  cut_off.js
 
 filter_file "${RAW_FILE}"
+
 

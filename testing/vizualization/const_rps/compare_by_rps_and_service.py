@@ -1,18 +1,17 @@
 import matplotlib.pyplot as plt
 
 from vizualization.utils.const import services_colors_light
-from vizualization.utils.load import load_results
+from vizualization.utils.load import load_results_by_path
 
 path_base = "./../../results"
 method = "const_rps"
 
 service_values = ['spring', 'fastapi', 'flask', 'gin']
 endpoint = "hello"
-duration = 10
+duration = 120
 # '16', '32', '64', '128', '256', '512', '1024', '2048', '4096', '8192'
-rps_values = ['16', '32', '64', '128', '256', '512', '1024', '2048', '4096', '8192']
-metric = 'http_req_duration'
-metric_key = 'avg'
+rps_values = ['32', '64', '128', '256', '512', '1024']
+metric_key = 'duration'
 
 paths = {
     f'{service}_{rps}rps': f'{path_base}/{method}/{service}/{endpoint}/results_{duration}s_{rps}rps.json'
@@ -20,8 +19,8 @@ paths = {
     for service in service_values
 }
 
-data = {tech: load_results(path) for tech, path in paths.items()}
-metric_data = {tech: data[tech]['metrics'][metric][metric_key] for tech in paths.keys()}
+data = {tech: load_results_by_path(path) for tech, path in paths.items()}
+metric_data = {tech: data[tech]['metrics']['http_req_stats']['data']['tags'][metric_key] for tech in paths.keys()}
 
 # Drawing chart
 fig, ax = plt.subplots()
@@ -40,13 +39,13 @@ for i in range(number_of_bars):
 
     ax.bar(pos_x, counts, bar_width, label=f'{service}', color=services_colors_light[service])
 
-    #for j in range(number_of_categories):
+    # for j in range(number_of_categories):
     #    ax.text(pos_x[j] + bar_width / 1000, 0, f'{counts[j]}', ha='center', va='bottom', rotation=90, fontsize=7)
 
 ax.set_xlabel('Liczba rps')
-ax.set_ylabel(f'{metric}.{metric_key}')
+ax.set_ylabel(f'{metric_key}')
 ax.set_title(
-    f'Porównanie metryki {metric} klucza {metric_key}\nendpoint={endpoint}, duration={duration}')
+    f'Porównanie metryki {metric_key}\nendpoint={endpoint}, duration={duration}')
 ax.set_xticks(range(number_of_categories))
 ax.set_xticklabels(rps_values)
 ax.legend()

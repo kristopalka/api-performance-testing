@@ -4,18 +4,17 @@ source .topology_params
 
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
-        -r|--results-dir) RESULTS_DIR="$2"; shift ;;
-        -s|--service) SERVICE="$2"; shift ;;
-        -e|--endpoint) ENDPOINT="$2"; shift ;;
-        --warmup-vus) WARMUP_VUS="$2"; shift ;;
-        --warmup-duration) WARMUP_DURATION="$2"; shift ;;
-        -v|--vus) VUS="$2"; shift ;;
-        -d|--duration) DURATION="$2"; shift ;;
+        -r|--results-dir) RESULTS_DIR="$2"; shift 2 ;;
+        -s|--service) SERVICE="$2"; shift 2 ;;
+        -e|--endpoint) ENDPOINT="$2"; shift 2 ;;
+        --warmup-vus) WARMUP_VUS="$2"; shift 2 ;;
+        --warmup-duration) WARMUP_DURATION="$2"; shift 2 ;;
+        -v|--vus) VUS="$2"; shift 2 ;;
+        -d|--duration) DURATION="$2"; shift 2 ;;
         --skip-warmup) SKIP_WARMUP=true; shift ;;
         --skip-restart) SKIP_RESTART=true; shift ;;
         *) echo "Unknown parameter passed: $1"; helpFunction ;;
     esac
-    shift
 done
 
 RESULTS_DIR=${RESULTS_DIR:-"./../results/const_vus"}

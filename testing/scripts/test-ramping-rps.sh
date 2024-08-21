@@ -4,32 +4,32 @@ source .topology_params
 
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
-        --results-dir) RESULTS_DIR="$2"; shift ;;
-        -s|--service) SERVICE="$2"; shift ;;
-        -e|--endpoint) ENDPOINT="$2"; shift ;;
-        --warmup-rps) WARMUP_RPS="$2"; shift ;;
-        --warmup-duration) WARMUP_DURATION="$2"; shift ;;
-        -r|--rps) RPS="$2"; shift ;;
-        -d|--duration) DURATION="$2"; shift ;;
+        --results-dir) RESULTS_DIR="$2"; shift 2 ;;
+        -s|--service) SERVICE="$2"; shift 2 ;;
+        -e|--endpoint) ENDPOINT="$2"; shift 2 ;;
+        --warmup-rps) WARMUP_RPS="$2"; shift 2 ;;
+        --warmup-duration) WARMUP_DURATION="$2"; shift 2 ;;
+        --start-rps) START_RPS="$2"; shift 2 ;;
+        --end-rps) END_RPS="$2"; shift 2 ;;
+        -d|--duration) DURATION="$2"; shift 2 ;;
         --skip-warmup) SKIP_WARMUP=true; shift ;;
         --skip-restart) SKIP_RESTART=true; shift ;;
         *) echo "Unknown parameter passed: $1"; helpFunction ;;
     esac
-    shift
 done
 
 
 RESULTS_DIR=${RESULTS_DIR:-"./../results/ramping_rps"}
-SERVICE=${SERVICE:-"gin"}
+SERVICE=${SERVICE:-"spring"}
 ENDPOINT=${ENDPOINT:-"hello"}
 
-WARMUP_RPS=${WARMUP_RPS:-128}
+WARMUP_RPS=${WARMUP_RPS:-32}
 WARMUP_DURATION=${WARMUP_DURATION:-5}
-WARMUP_ALLOCATED_VUS=100
+WARMUP_ALLOCATED_VUS=50
 
-START_RPS=${START_RPS:-0}
-END_RPS=${END_RPS:-16384}
-DURATION=${DURATION:-150}
+START_RPS=${START_RPS:-1}
+END_RPS=${END_RPS:-1024}
+DURATION=${DURATION:-30}
 ALLOCATED_VUS=20000
 
 
@@ -70,7 +70,7 @@ then
     --env RPS="${WARMUP_RPS}" \
     --env DURATION="${WARMUP_DURATION}" \
     --env ALLOCATED_VUS="${WARMUP_ALLOCATED_VUS}" \
-    --no-summary \
+    --no-summary --quiet \
     k6/const_rps.js
 fi
 
@@ -91,5 +91,6 @@ k6 run \
   --summary-trend-stats="${STATS_NORMAL}" \
   --summary-export "${RESULTS_FILE}" \
   --out json="${RAW_FILE}" \
+  --quiet \
   k6/ramping_rps.js
 

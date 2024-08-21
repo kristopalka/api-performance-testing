@@ -1,21 +1,10 @@
-test="./test-ramping-rps.sh"
-services=("spring" "flask" "fastapi" "gin")
-
-start_time=$(date +%s.%N)
+test="./test-const-rps.sh"
+services=("spring" "flask" "fastapi" "gin")  # "spring" "flask" "fastapi" "gin"
 
 for service in "${services[@]}"; do
-    for rps in 1; do
+    for rps in 850 900 950 1000; do
         echo "Testing ${service} with ${rps} rps"
-        if [ $rps -eq 1 ]; then
-            $test --service "$service"
-        else
-            $test --service "$service" --skip-warmup
-        fi
-        sleep 10
+        $test  --service "$service" --rps "$rps" --duration 120
+        sleep 30
     done
 done
-
-
-end_time=$(date +%s.%N)
-time=$(echo "$end_time - $start_time" | bc)
-echo "Time spent on collecting data: ${time}"
