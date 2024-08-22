@@ -20,6 +20,16 @@ services:
     ports:
       - "8080:8080"
 
+  fastapi_5w:
+    image: "fastapi_5w"
+    container_name: "fastapi_5w"
+    build:
+      context: fastapi/
+      dockerfile: Dockerfile_5w
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
   spring:
     image: "spring"
     container_name: "spring"
@@ -40,6 +50,16 @@ services:
     image: "flask"
     container_name: "flask"
     build: flask/
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
+  flask_5w:
+    image: "flask_5w"
+    container_name: "flask_5w"
+    build:
+      context: flask/
+      dockerfile: Dockerfile_5w
     restart: unless-stopped
     ports:
       - "8080:8080"
