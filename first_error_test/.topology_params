@@ -1,4 +1,0 @@
-SERVER_IP="10.0.0.1"
-SERVER_USER="krist"
-SERVER_PASS="ChillGressive"
-API_URL="http://10.0.0.1:8080"

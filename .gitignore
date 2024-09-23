@@ -1,4 +1,5 @@
 .idea/
 */.idea/
 */.venv
-testing/results/*
+./testing/results/*
+./testing/charts/*
