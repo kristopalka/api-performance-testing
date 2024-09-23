@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.stats import t
+from scipy.stats import t, norm
 
 
 def get_error_codes_counts(df):
@@ -18,6 +18,6 @@ def get_confidence(number, mean, std):
     t_critical = t.ppf(1 - alpha / 2, d)  # wartość krytyczna t
 
     margin_of_error = t_critical * (std / np.sqrt(number))
-    confidence_interval = (mean - margin_of_error, mean + margin_of_error)
 
-    return confidence_interval
+    confidence_interval = (mean - margin_of_error, mean + margin_of_error)
+    return margin_of_error

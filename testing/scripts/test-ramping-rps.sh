@@ -20,7 +20,7 @@ done
 
 
 RESULTS_DIR=${RESULTS_DIR:-"./../results/ramping_rps"}
-SERVICE=${SERVICE:-"spring"}
+SERVICE=${SERVICE:-"fastapi"}
 ENDPOINT=${ENDPOINT:-"hello"}
 
 WARMUP_RPS=${WARMUP_RPS:-32}
@@ -28,8 +28,8 @@ WARMUP_DURATION=${WARMUP_DURATION:-5}
 WARMUP_ALLOCATED_VUS=50
 
 START_RPS=${START_RPS:-1}
-END_RPS=${END_RPS:-1024}
-DURATION=${DURATION:-30}
+END_RPS=${END_RPS:-4096}
+DURATION=${DURATION:-60}
 ALLOCATED_VUS=20000
 
 
@@ -91,6 +91,5 @@ k6 run \
   --summary-trend-stats="${STATS_NORMAL}" \
   --summary-export "${RESULTS_FILE}" \
   --out json="${RAW_FILE}" \
-  --quiet \
   k6/ramping_rps.js
 

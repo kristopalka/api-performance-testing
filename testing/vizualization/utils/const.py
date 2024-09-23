@@ -1,18 +1,26 @@
 charts_dir = './../../charts'
 
 services_colors = {
-    'spring': 'tab:green',
-    'fastapi': 'tab:red',
-    'flask': 'tab:orange',
-    'gin': 'tab:blue'
+    'spring': '#3a923a',
+    'fastapi': '#c03d3e',
+    'fastapi_5w': '#9372b2',
+    'flask': '#e1812c',
+    'flask_5w': '#845b53',
+    'gin': '#3274a1'
 }
 
-services_colors_light = {
-    'spring': '#6bbc6b',
-    'fastapi': '#e26868',
-    'flask': '#ffa556',
-    'gin': '#62a0cb'
+gray = "#3d3d3d"
+
+services_names = {
+    'spring': 'Spring',
+    'fastapi': 'FastAPI',
+    'fastapi_5w': 'FastAPI 5w',
+    'flask': 'Flask',
+    'flask_5w': 'Flask 5w',
+    'gin': 'Gin'
 }
+
+
 
 metrics_colors = {
     "sending": "lightblue",
@@ -39,9 +47,9 @@ metrics_marker = {
 
 
 error_codes = {
-    '0': {'desc': 'HTTP 200', 'color': 'green'},
-    '1050': {'desc': 'HTTP request timeout', 'color': 'orange'},
-    '1220': {'desc': 'TCP reset by peer', 'color': 'red'},  # read: reset by peer
-    '1211': {'desc': 'TCP dial timeout', 'color': 'purple'},  # dial: i/o timeout
-    'drop': {'desc': 'Dropped iterations', 'color': 'black'},
+    '0': {'desc': 'Kod HTTP 200', 'color': 'green'},
+    '1050': {'desc': 'Przekroczenie czasu HTTP', 'color': 'orange'},
+    '1220': {'desc': 'Reset połączenia TCP', 'color': 'red'},  # read: reset by peer
+    '1211': {'desc': 'Przekroczenie czasu TCP', 'color': 'purple'},  # dial: i/o timeout
+    'drop': {'desc': 'Odrzucona iteracja', 'color': 'black'},
 }

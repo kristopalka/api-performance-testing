@@ -4,9 +4,9 @@ import pandas as pd
 from vizualization.utils.const import *
 from vizualization.utils.load import get_dataframe
 
-executor = "const_rps"
+executor = "const_rps/iter_0"
 
-service = "gin"
+service = "fastapi"
 endpoint = "hello"
 metrics = ["sending", "waiting", "receiving", "duration", "connecting"]
 duration = 120
@@ -55,7 +55,7 @@ for metric in metrics:
     #                           color=metrics_color[metric], alpha=0.2)
 
 ax_durations.set_xlabel('Obciążęnie RPS')
-ax_durations.set_ylabel('Średni czas metryki (ms)')
+ax_durations.set_ylabel('Średni czas metryki [ms]')
 plt.title(
     f'Średni czas oraz odchylenie standardowe metryk dla {service} \\{endpoint}, duration={duration}, warmup_time={warmup_time}')
 

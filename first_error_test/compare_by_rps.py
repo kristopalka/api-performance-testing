@@ -7,7 +7,7 @@ import ujson
 from matplotlib import pyplot as plt
 from scipy.stats import t
 
-from vizualization.utils.const import services_colors
+from const import services_colors
 
 
 def load_file_by_path(path):
@@ -20,6 +20,7 @@ results_file = "./results/processed.json"
 rps_values = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 services = ['gin', 'spring', 'flask', 'fastapi']
 endpoint = "hello"
+samples = 10
 
 
 
@@ -40,7 +41,7 @@ for service in services:
                 processed_count = int(data[key]['processed_requests'])
                 duration = (end_date - start_date).total_seconds()
 
-                durations.append(duration)  # can be changed to processed_count
+                durations.append(processed_count)  # can be changed to processed_count
 
         samples = len(durations)
         df = samples - 1  # stopnie swobody (degrees of freedom)
@@ -70,12 +71,13 @@ for service in services:
 
 
 plt.xlabel('Obciążenie RPS')
-plt.ylabel('Średni czas działania bez błędów')
-plt.title(f'Średni czas działania bez błędów w zależności od obciążenia\n(10 pomiarów dla każdego RPS, odchylenie standardowe)')
+plt.ylabel('Liczba obsłużonych zapytań do pierwszego błędu')
+plt.title(f'endpoint={endpoint}, samples={samples}')
 
 plt.ylim(bottom=0)
 plt.grid(True)
-plt.legend()
+plt.legend(loc='upper left')
 
-plt.savefig(f'./charts/cut_off.png', format='png')
+plt.subplots_adjust(left=0.1, bottom=0.1,  right=0.96, top=0.91)
+plt.savefig(f'./charts/request_count_to_first_error.svg', format='svg')
 plt.show()

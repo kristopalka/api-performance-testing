@@ -17,7 +17,7 @@ while [[ "$#" -gt 0 ]]; do
     esac
 done
 
-RESULTS_DIR=${RESULTS_DIR:-"./../results/const_rps"}
+RESULTS_DIR=${RESULTS_DIR:-"./../results/const_rps/iter_0"}
 SERVICE=${SERVICE:-"fastapi"}
 ENDPOINT=${ENDPOINT:-"hello"}
 
@@ -25,7 +25,7 @@ WARMUP_RPS=${WARMUP_RPS:-32}
 WARMUP_DURATION=${WARMUP_DURATION:-5}
 WARMUP_ALLOCATED_VUS=50
 
-RPS=${RPS:-850}
+RPS=${RPS:-1100}
 DURATION=${DURATION:-120}
 ALLOCATED_VUS=20000
 
@@ -84,7 +84,6 @@ k6 run \
   --env DURATION="${DURATION}" \
   --env ALLOCATED_VUS="${ALLOCATED_VUS}" \
   --summary-trend-stats="${STATS_NORMAL}" \
-  --summary-export "${RESULTS_FILE}" \
   --out json="${RAW_FILE}" \
   k6/const_rps.js
 

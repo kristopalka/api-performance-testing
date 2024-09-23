@@ -1,11 +1,12 @@
 import os
 import re
+import warnings
 
 import pandas as pd
 import ujson
 
 path_base = "./../../results"
-
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 def load_results(executor, service, endpoint, duration, rps):
     path = f"{path_base}/{executor}/{service}/{endpoint}"
@@ -62,13 +63,13 @@ def load_durations_dataframe(raw_file_path):
     return df
 
 
-def get_dataframe(executor, service, endpoint, duration, rps, force_process=False):
-    path = f"{path_base}/{executor}/{service}/{endpoint}"
+def get_dataframe(executor, service, endpoint, duration, rps, force_process=False, path_to_results=path_base):
+    path = f"{path_to_results}/{executor}/{service}/{endpoint}"
     file_raw = f'{path}/raw_{duration}s_{rps}rps.json'
     file_proc = f'{path}/proc_{duration}s_{rps}rps.csv'
 
     if os.path.isfile(file_proc) and not force_process:
-        print(f'Reading data from {file_proc}')
+        # print(f'Reading data from {file_proc}')
         dtype_dict = {
             'time': 'float64',
             'duration': 'float64',
@@ -76,7 +77,16 @@ def get_dataframe(executor, service, endpoint, duration, rps, force_process=Fals
         }
         return pd.read_csv(file_proc, dtype=dtype_dict, index_col=0)
     else:
-        print(f'Processing data from {file_raw}')
+        # print(f'Processing data from {file_raw}')
         df = load_durations_dataframe(file_raw)
         df.to_csv(file_proc)
         return df
+
+
+def save_df(df, filename):
+    path = f"{path_base}/{filename}"
+    df.to_csv(path)
+
+def read_df(filename):
+    path = f"{path_base}/{filename}"
+    return pd.read_csv(path)
